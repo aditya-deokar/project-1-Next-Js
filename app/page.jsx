@@ -1,3 +1,4 @@
+
 import HeroSection from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { features } from "./data/features";
@@ -5,6 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { howItWorks } from "./data/howItWorks";
 import { testimonial } from "./data/testimonials";
 import Image from "next/image";
+import { faqs } from "./data/faqs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -83,7 +87,7 @@ export default function Home() {
               {
                 howItWorks.map((item,index)=>{
                     return(
-                      <div key={index} className="flex flex-col items-center text-center space-y-4">
+                      <div key={index} className="flex flex-col items-center text-center space-y-4 bg-primary-foreground/10 rounded-lg p-2 hover:bg-primary-foreground/40 transition-colors">
                           <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                             {
                               item.icon
@@ -111,14 +115,14 @@ export default function Home() {
                 testimonial.map((item,index)=>{
                     return(
                       <Card key={index} 
-                      className="bg-background" >                      
+                      className="bg-background/50 px-3" >                      
                         <CardContent className="pt-6">
                             <div className="flex flex-col space-y-4 ">
                               <div className="flex items-center space-x-4 pb-2">
-                                <div className="relative h-12 w-12 flex-shrink-0">
+                                <div className="relative h-14 w-14 flex-shrink-0">
                                     <Image src={item.image}
-                                    width={40}
-                                    height={40}
+                                    width={100}
+                                    height={100}
                                     alt={item.author}
                                     className="rounded-full object-cover border-2 border-primary/20" />
                                 </div>
@@ -148,6 +152,58 @@ export default function Home() {
             </div>
         </div>
      </section>
+
+
+     {/* faqs section */}
+     <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+                <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p className="text-muted-foreground">Find answers to common questions about our platform</p>
+            </div>
+
+
+            <div className=" max-w-7xl mx-auto">
+              <Accordion type="single" collapsible>
+                  {
+                    faqs.map((faq,index)=>{
+                        return(
+                        
+                            <AccordionItem key={index} value={`item-${index}`}>
+                              <AccordionTrigger>{faq.question}</AccordionTrigger>
+                              <AccordionContent className="text-muted-foreground">
+                                {faq.answer}
+                              </AccordionContent>
+                            </AccordionItem>
+                        
+                        )
+                    })
+                  }
+                </Accordion>
+            </div>
+        </div>
+      </section>
+
+
+
+     {/* faqs section */}
+     <section className="w-full ">
+        <div className="mx-auto py-12 gradient rounded-lg">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl">Ready to Accelerate Your Career?</h2>
+                <p className="text-primary-foreground/80 mx-auto max-w-[600px] md:text-xl">Join NeoLearn for advancing your career with AI-powered guidance.</p>
+
+                <Link href={"/dashboard"} passHref>
+                    <Button size='lg' variant="secondary" className="h-11 mt-5 animate-bounce">
+                      Start Your Journey Today
+                    </Button>
+                </Link>
+            </div>
+
+
+            
+        </div>
+      </section>
 
 
    </div>

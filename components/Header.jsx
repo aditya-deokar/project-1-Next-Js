@@ -1,3 +1,4 @@
+
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,13 +13,14 @@ const Header = () => {
       <nav className='container mx-auto px-4 h-16 flex items-center justify-between'>
 
         <Link href="/">
-          <Image
-            src='/'
+          {/* <Image
+            src='/img/original.png'
             width={200}
             height={60}
             alt='NeoLearn.ai'
             className='h-12 py-1 w-auto object-contain'
-          />
+          /> */}
+          <h1 className='text-bold'>NeoLearn</h1>
         </Link>
 
         <div className='flex items-center space-x-2 md:space-x-4'>
