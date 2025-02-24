@@ -1,4 +1,4 @@
-const faqs = [ 
+export const faqs = [ 
     {
       question: "What makes NeoLearn unique as a study and career development tool?",
       answer:
