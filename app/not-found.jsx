@@ -10,7 +10,7 @@ const NotFound = () => {
         </h1>
 
         <h2 className='text-2xl font-semibold mb-4'>Page Not Found</h2>
-        <P>Oops! The page you&apos;re looking for doesn't exist or has been moved.</P>
+        <p>Oops! The page you&apos;re looking for doesn't exist or has been moved.</p>
 
         <Link href="/">
             <Button>Return Home</Button>
