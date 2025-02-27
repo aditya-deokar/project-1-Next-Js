@@ -1,4 +1,4 @@
-
+"use client"
 import HeroSection from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { features } from "../data/features";
