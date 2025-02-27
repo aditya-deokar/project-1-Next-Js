@@ -8,7 +8,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash",
 });
-export async function generateQuize() {
+export async function generateQuiz() {
   const { userId } = await auth();
 
   if (!userId) throw new Error("Unauthorized");

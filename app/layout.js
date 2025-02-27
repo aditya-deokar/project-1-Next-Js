@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
 
     <ClerkProvider appearance={{
-      baseTheme:neobrutalism
+      baseTheme:dark
     }}>
     <html lang="en" suppressHydrationWarning>
       <body
