@@ -7,7 +7,7 @@ import { generateAIInsights } from "./dashboard";
 export async function updateUser(data){
     const {userId } = await auth();
 
-    if(!userId) throw new Error("Unauthorized");
+    if(!userId) throw new Error("Unauthorized user!!");
 
     const user =await db.user.findUnique({
         where:{
@@ -15,7 +15,7 @@ export async function updateUser(data){
         },
     });
 
-    if(!user) throw new Error("User Not Found");
+    if(!user) throw new Error("User Not Found try again");
 
     try {
 
